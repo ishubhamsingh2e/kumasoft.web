@@ -22,7 +22,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/icon-light.png" type="image/x-icon" />
       </head>
       <body
-        className={`${grift.variable}  antialiased bg-[url(/background1-c.jpg)] bg-contain` }
+        className={`${grift.variable}  antialiased  bg-contain` }
       >
         <Navigation/>
         {children}

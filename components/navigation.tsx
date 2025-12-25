@@ -17,8 +17,8 @@ export function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className=" font-grift   w-full backdrop-blur-md py-2 border-b border-white/10  ">
-      <div className="mx-auto max-w-7xl px-4 ">
+    <nav className=" font-grift bg-section   w-full backdrop-blur-md py-2 border-b border-white/10  ">
+      <div className="mx-auto container px-4 ">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 sticky top-2">

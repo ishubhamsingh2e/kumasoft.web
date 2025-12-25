@@ -6,11 +6,11 @@ import { useMotionValue, useSpring } from "motion/react"
 
 import { cn } from "@/lib/utils"
 
-const MOVEMENT_DAMPING = 1
+const MOVEMENT_DAMPING = 4
 
 const GLOBE_CONFIG: COBEOptions = {
-  width: 800,
-  height: 800,
+  width: 1000,
+  height: 1000,
   onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
@@ -86,7 +86,7 @@ export function Globe({
       width: width * 2,
       height: width * 2,
       onRender: (state) => {
-        if (!pointerInteracting.current) phi += 0.005
+        if (!pointerInteracting.current) phi += 0.0005
         state.phi = phi + rs.get()
         state.width = width * 2
         state.height = width * 2
