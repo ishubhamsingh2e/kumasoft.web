@@ -21,14 +21,12 @@ export function Footer() {
           <Highlighter action="underline" color="#FFA500">
             DON&apos;T HESITATE TO
           </Highlighter>{" "}
-       
           <br />
           REACH OUT FOR YOUR
           <br />
-         
           <Highlighter action="highlight" color="#d55c39">
-          NEXT BIG IDEA
-        </Highlighter>{" "}
+            NEXT BIG IDEA
+          </Highlighter>{" "}
         </h2>
         <Button
           size="lg"

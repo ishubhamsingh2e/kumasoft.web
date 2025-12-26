@@ -3,8 +3,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-
-.container{
+.container {
   max-width: 1360px;
 }
 
@@ -23,7 +22,7 @@
   --font-grift: var(--font-grift);
 }
 
-.bg-section{
+.bg-section {
   background: hsla(237, 45%, 52%, 1);
 
   background: radial-gradient(
