@@ -1,8 +1,9 @@
-import { ArrowBigDown, ArrowUpRight } from "lucide-react";
+import { ArrowBigDown } from "lucide-react";
 import { Badge } from "./badge";
 import { TabSectionProps } from "@/lib/utils";
 import TabCardInfoSection from "./tab-card-info-section";
-import { ecommerceCards } from "@/app/page";
+import { ecommerceCards } from "@/lib/data";
+import { BentoGrid } from "./bento-grid";
 
 export const infoContent = {
   badgeText: "Best-in-class",
@@ -18,7 +19,7 @@ export default function InfoSection({
   return (
     <>
       <div className="container mx-auto grid  grid-cols-1 gap-8 items-center lg:grid-cols-[0.45fr_1fr] py-20">
-        <div className="h-full flex flex-col justify-start items-start">
+        <div className="h-full flex flex-col justify-center items-start">
           <Badge
             description={staticContent.badgeText}
             classname="mb-4 text-center bg-card rounded-full"
@@ -34,7 +35,9 @@ export default function InfoSection({
         <div>
           <TabCardInfoSection key="slide-2" cards={ecommerceCards} />
         </div>
+
       </div>
+     
     </>
   );
 }

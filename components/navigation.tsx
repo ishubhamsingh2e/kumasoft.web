@@ -18,7 +18,7 @@ export function Navigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="absolute top-0 font-grift w-full py-8">
+    <nav className="absolute top-0 font-grift w-full py-8 z-30 bg-primary">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
