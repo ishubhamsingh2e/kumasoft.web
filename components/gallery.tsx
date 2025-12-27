@@ -72,7 +72,7 @@ export function TemplateGallery() {
   )
 
   return (
-    <div className="bg-[#f9f9fa]">
+    <section className="bg-[#f9f9fa]">
       <section className="py-20 container mx-auto">
       {/* Header */}
       <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-16">
@@ -116,6 +116,6 @@ export function TemplateGallery() {
         ))}
       </div>
     </section>
-    </div>
+    </section>
   )
 }
