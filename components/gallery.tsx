@@ -22,34 +22,36 @@ const CATEGORIES = [
 const TEMPLATES = [
   {
     id: 1,
-    title: "Architectural Studio",
-    tags: ["Design", "Interior", "Studio"],
+    title: "Cyberflake",
+    tags: ["Startup", "Digital Platform", "Scalable Systems"],
+
     image:
-      "https://colabrio.ams3.cdn.digitaloceanspaces.com/ohio.clbthemes.com/Demo34_Home.webp",
+      "/projects/cyberflake.png",
     category: "agency",
   },
   {
     id: 2,
-    title: "Design Studio",
-    tags: ["Design", "Interior", "Studio"],
+    title: "KumaCare",
+    tags: ["Healthcare", "Wellness", "Technology"],
     image:
-      "https://colabrio.ams3.cdn.digitaloceanspaces.com/ohio.clbthemes.com/Demo34_Home.webp",
+      "/projects/kumacare.png",
     category: "agency",
   },
   {
     id: 3,
-    title: "Digital Agency",
-    tags: ["Creative", "Design", "Digital"],
+    title: "KumaCMS",
+    tags: ["Content Management System", "Web Platform", "Scalable Architecture"],
+
     image:
-      "https://colabrio.ams3.cdn.digitaloceanspaces.com/ohio.clbthemes.com/Demo34_Home.webp",
+      "/projects/kumaCMS.png",
     category: "agency",
   },
   {
     id: 4,
-    title: "Creative Agency",
-    tags: ["Design", "Digital", "Studio"],
+    title: "DOJO Dashboard",
+    tags: ["Dashboard", "Analytics", "Data Visualization"],
     image:
-      "https://colabrio.ams3.cdn.digitaloceanspaces.com/ohio.clbthemes.com/Demo34_Home.webp",
+      "/projects/sandanvikas.png",
     category: "agency",
   },
   {
@@ -83,20 +85,20 @@ export function TemplateGallery() {
       <section className="py-20 container mx-auto">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-16">
-          <h2 className="text-5xl md:text-6xl font-bold tracking-tight max-w-2xl leading-[1.1]">
-            Customize pre-designed templates effortlessly.
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight max-w-3xl leading-[1.1]">
+           Explore our selected work and digital solutions.
+
           </h2>
           <p className="text-lg text-muted-foreground max-w-sm font-medium leading-relaxed">
-            Whether you need a portfolio site, an online store, or a personal
-            blog use and mix up highly customizable and responsive demo
-            templates to get started.
+           From high-performing websites to scalable products and immersive experiences,
+  here’s a glimpse of how we help brands build, grow, and stand out digitally.
           </p>
         </div>
 
         {/* Filter Bar */}
         <div className="flex flex-wrap items-center gap-2 mb-12">
           <span className="text-sm font-bold text-muted-foreground mr-2">
-            Filter by
+          Filter projects by
           </span>
           {CATEGORIES.map((category) => (
             <button

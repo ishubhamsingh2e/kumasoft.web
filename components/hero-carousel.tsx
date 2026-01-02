@@ -18,7 +18,7 @@ export default function HeroCarousel() {
                 {IMAGES_ROW_A.map((src, idx) => (
                   <div key={idx} className="h-52 w-fit">
                     <img
-                      src={`${src}`}
+                      src={src}
                       alt="Unsplash sample"
                       loading="lazy"
                       decoding="async"
@@ -35,7 +35,7 @@ export default function HeroCarousel() {
                 {IMAGES_ROW_B.map((src, idx) => (
                   <div key={idx} className="h-52 w-fit">
                     <img
-                      src={`${src}`}
+                      src={src}
                       alt="Unsplash sample"
                       width={240}
                       height={160}

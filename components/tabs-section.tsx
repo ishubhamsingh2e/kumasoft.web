@@ -11,7 +11,7 @@ import { TabSectionProps } from "@/lib/utils";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function StickyScrollTabs({
-  classname,
+  backgroundColor,
   static: staticContent,
   slides,
   lrt = true,
@@ -84,7 +84,7 @@ export default function StickyScrollTabs({
   return (
     <section
       ref={sectionRef}
-      className={`font-grift relative ${classname ?? ""}`}
+      className={`font-grift relative ${backgroundColor ?? ""}`}
     >
       <div className="container mx-auto">
         <div
@@ -101,10 +101,10 @@ export default function StickyScrollTabs({
                 description={staticContent.badgeText}
                 classname="mb-4 w-[30%] text-center bg-[#e8d5ea]"
               />
-              <h2 className="text-[52px] leading-13 font-bold text-black">
+              <h2 className="text-[52px] leading-13 font-bold text-white">
                 {staticContent.title}
               </h2>
-              <p className="text-md mt-4 leading-7 font-normal">
+              <p className="text-md mt-4 leading-7 font-normal text-white/90">
                 {staticContent.description}
               </p>
               <Button className="mt-4 w-[30%] bg-black p-5 font-bold text-white">

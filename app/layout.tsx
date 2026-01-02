@@ -4,8 +4,6 @@ import { Navigation } from "@/components/navigation";
 import { grift } from "./font";
 import { Footer } from "@/components/footer";
 
-
-
 export const metadata: Metadata = {
   title: "KumaSoft - Next Gen Softwares",
   description: "KumaSoft is a software development company that specializes in building cutting-edge web and mobile applications using the latest technologies. Our team of experienced developers, designers, and project managers work closely with clients to deliver high-quality solutions that meet their unique needs and exceed their expectations.",
@@ -16,6 +14,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
       <head>
@@ -24,7 +24,6 @@ export default function RootLayout({
       <body
         className={`${grift.variable}  antialiased  bg-contain` }
       >
-        <Navigation/>
         {children}
         <Footer/>
       

@@ -1,90 +1,168 @@
 "use client"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Plus, Minus } from "lucide-react"
-import { CtaBanner } from "./cta-banner"
+
+import * as React from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Plus, ArrowRight } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 const FAQ_ITEMS = [
   {
-    id: "recurring-fees",
-    question: "Are there any recurring license fees?",
-    answer: "No, Ohio theme is a one-time purchase. You get lifetime updates and support without any hidden costs.",
+    id: "services-offered",
+    number: "01",
+    question: "What services does Kumasoft provide?",
+    content:
+      "We deliver end-to-end digital solutions: from custom web applications and branding to immersive 3D experiences. Our goal is to blend high-end design with robust engineering.",
   },
   {
-    id: "purchase-includes",
-    question: "What is included with my purchase of Ohio theme?",
-    content: (
-      <div className="space-y-4 text-gray-400">
-        <p>
-          With your purchase of <span className="text-[#FF4D4D]">Ohio</span>, you will receive:
-        </p>
-        <ul className="list-disc space-y-3 pl-5 marker:text-gray-600">
-          <li>
-            6 Months of professional support. The valid support period starts from the date of purchase. You can{" "}
-            <span className="text-[#FF4D4D] underline cursor-pointer hover:no-underline">renew or extend</span> a
-            support period if additional help is required.
-          </li>
-          <li>The option to register/detach a single staging/dev/local site per top-level domain.</li>
-          <li>
-            3 Bundled premium plugins: WPBakery Page Builder, Slider Revolution and Advanced Custom Fields Pro at no
-            extra cost.
-          </li>
-          <li>
-            54+ prebuilt demo templates that can be imported with a few clicks, and all of which are highly
-            customizable.
-          </li>
-          <li>
-            Figma{" "}
-            <span className="text-[#FF4D4D] underline cursor-pointer hover:no-underline">design source files</span> with{" "}
-            <span className="text-[#FF4D4D]">Ohio</span> demo templates.
-          </li>
-        </ul>
-      </div>
-    ),
+    id: "project-timeline",
+    number: "02",
+    question: "How long does a typical project take?",
+    content:
+      "Speed depends on complexity. Corporate sites take 4-6 weeks, while deep-tech products can span 3-6 months. We prioritize quality over rushing, but we never miss a deadline.",
   },
   {
-    id: "figma-files",
-    question: "Where do I find the Figma design source files?",
-    answer:
-      "You can find the Figma source files in the downloads section of your account or within the theme package documentation.",
+    id: "pricing-model",
+    number: "03",
+    question: "How do you price your projects?",
+    content:
+      "Value-based pricing. We offer milestone-driven contracts that ensure transparency. No hidden fees, just clear deliverables tailored to your business goals.",
   },
   {
-    id: "support",
-    question: "Where can I get customer support?",
-    answer: "We provide support through our dedicated help desk and documentation portal.",
+    id: "client-involvement",
+    number: "04",
+    question: "Will I be involved in the process?",
+    content:
+      "Highly. We operate on a 'Radical Transparency' model. You'll have access to our Slack channels and weekly sprint reviews to ensure we're perfectly aligned.",
   },
   {
-    id: "presale",
-    question: "Have a presale question?",
-    answer: "Feel free to reach out to our sales team via the contact form on our website.",
+    id: "post-launch-support",
+    number: "05",
+    question: "Do you offer support after delivery?",
+    content:
+      "Delivery is just the beginning. We provide dedicated post-launch monitoring and iterative scaling support to ensure your product thrives in the wild.",
   },
 ]
 
 export function FaqSection() {
-  return (
-    <div className="w-full bg-[#211e28] container mx-auto p-10 rounded-t-2xl">
-      <h2 className="text-center text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-        Frequently asked <br /> questions.
-      </h2>
+  const [openId, setOpenId] = React.useState<string | null>(FAQ_ITEMS[0].id)
 
-      <div className="max-w-4xl mx-auto mt-8">
-        <Accordion type="single" collapsible defaultValue="purchase-includes" className="w-full">
-        {FAQ_ITEMS.map((item) => (
-          <AccordionItem key={item.id} value={item.id} className="border-b border-gray-800/50 py-2 last:border-0">
-            <AccordionTrigger className="group flex w-full items-center gap-4 py-6 text-left hover:no-underline">
-              <div className="relative flex h-5 w-5 shrink-0 items-center justify-center">
-                <Plus className="absolute h-4 w-4 text-gray-400 transition-all duration-300 group-data-[state=open]:rotate-90 group-data-[state=open]:opacity-0" />
-                <Minus className="absolute h-4 w-4 text-gray-400 opacity-0 transition-all duration-300 group-data-[state=open]:rotate-0 group-data-[state=open]:opacity-100" />
-              </div>
-              <span className="text-lg font-bold text-white transition-colors md:text-xl">{item.question}</span>
-            </AccordionTrigger>
-            <AccordionContent className="pb-8 pl-9 text-base text-center leading-relaxed text-gray-400">
-              {item.content || item.answer}
-            </AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+  return (
+    <section className="w-full bg-primary py-24 px-6 md:px-12 overflow-hidden relative">
+      {/* Background Graphic Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 blur-[120px] rounded-full -mr-48 -mt-48" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/5 blur-[100px] rounded-full -ml-32 -mb-32" />
+
+      <div className="container mx-auto grid lg:grid-cols-12 gap-16 relative z-10">
+        {/* Left Side: Editorial Intro */}
+        <div className="lg:col-span-5 space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-secondary/5 text-accent text-xs font-bold tracking-widest uppercase"
+          >
+            <span className="w-1 h-1 rounded-full bg-secondary animate-pulse" />
+            Common Inquiries
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-7xl font-bold tracking-tighter text-white leading-[0.9]"
+          >
+            Curiosity is the <span className="text-accent italic">engine</span> of innovation.
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg text-white/60 max-w-sm leading-relaxed"
+          >
+            Everything you need to know about how we work, our process, and what makes us different from the rest.
+          </motion.p>
+
+          <div className="pt-8 group">
+            <button className="flex items-center gap-4 text-white font-bold group">
+              <span className="h-12 w-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-secondary group-hover:border-accent transition-all duration-500">
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <span className="text-xl tracking-tight underline decoration-accent underline-offset-8">
+                Book a session
+              </span>
+            </button>
+          </div>
+        </div>
+
+        {/* Right Side: Interactive List */}
+        <div className="lg:col-span-7 space-y-4">
+          {FAQ_ITEMS.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.1,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className={cn(
+                "group relative border-b border-white/10 transition-all duration-500",
+                openId === item.id ? "pb-8" : "pb-6",
+              )}
+            >
+              <button
+                onClick={() => setOpenId(openId === item.id ? null : item.id)}
+                className="flex w-full items-start justify-between text-left pt-6 relative z-10"
+              >
+                <div className="absolute inset-0 -mx-6  scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left -z-10" />
+
+                <div className="flex items-start gap-6 md:gap-12 transition-transform duration-500 group-hover:translate-x-2">
+                  <span className="text-xs font-mono text-accent pt-1">{item.number}</span>
+                  <span
+                    className={cn(
+                      "text-2xl md:text-4xl font-bold tracking-tighter hover:text-secondary transition-all duration-500 hover:skew-x-[-8deg] ",
+                      openId === item.id ? "text-white" : "text-white/40 group-hover:text-white/70",
+                    )}
+                  >
+                    {item.question}
+                  </span>
+                </div>
+
+                <div
+                  className={cn(
+                    "mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 transition-all duration-500",
+                    openId === item.id ? "bg-secondary border-accent rotate-45" : "group-hover:border-white/30",
+                  )}
+                >
+                  <Plus
+                    className={cn("h-5 w-5 transition-colors", openId === item.id ? "text-primary" : "text-white/40")}
+                  />
+                </div>
+              </button>
+
+              <AnimatePresence>
+                {openId === item.id && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pl-[2.75rem] md:pl-[4.25rem] pt-6 max-w-xl">
+                      <p className="text-lg md:text-xl text-white/60 leading-relaxed font-light">{item.content}</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
       </div>
-      
-    </div>
+    </section>
   )
 }

@@ -11,15 +11,16 @@ export function CtaBanner() {
           </div>
           <div>
             <h3 className="text-xl font-bold tracking-tight md:text-2xl">
-              Looking for Theme <br className="hidden md:block" /> Customization?
+              Have a Project in Mind?
+              <br className="hidden md:block" /> Let’s Build It Together.
             </h3>
           </div>
         </div>
 
         <div className="max-w-xs text-sm opacity-90">
           <p>
-            <span className="font-bold text-white">Hire us!</span> We are WordPress specialists dedicated to bringing
-            your ideas to life.
+            <span className="font-bold text-white">Work with us.</span> We design and build high-impact websites,
+            digital products, SEO solutions, and immersive experiences.
           </p>
         </div>
 

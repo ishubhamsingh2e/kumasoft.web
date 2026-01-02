@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export interface TabSectionProps {
   lrt?:boolean
-  classname?: string;
+  backgroundColor?: string;
   static: {
     badgeText: string;
     title: string;

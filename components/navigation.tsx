@@ -11,7 +11,8 @@ const navigationItems = [
   { name: "Home", href: "/" },
   { name: "Projects", href: "/projects" },
   { name: "Services", href: "/services" },
-  { name: "Page Types", href: "/page-types" },
+  { name: "Blogs", href: "/blog" },
+  { name: "About Us", href: "/about" },
 ];
 
 export function Navigation() {
@@ -22,9 +23,9 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex gap-4 items-center">
-            <div className="rounded-full border-2 hover:border-[#F05A29] transition duration-300 ease-in-out not-only:p-2 h-fit w-fit">
-              <Menu className="w-6 h-6 text-white" />
+          <div className="flex gap-4 items-baseline">
+            <div className="rounded-full hidden border-2 hover:border-[#F05A29] transition duration-300 ease-in-out not-only:p-2 h-fit w-fit">
+              <Menu className="w-6 h-6 text-white " />
             </div>
             <Link href="/" className="flex items-center gap-2 sticky top-2">
               <Image
@@ -56,12 +57,13 @@ export function Navigation() {
           </div>
 
           {/* CTA Button */}
-          <Button
+         <a href="/contact
+         "> <Button
             size="lg"
-            className="rounded-full cursor-pointer bg-[#F05A29] font-grift"
+            className="rounded-full cursor-pointer bg-[#F05A29] text-xl font-grift"
           >
-            Book A Call
-          </Button>
+            Contact Us
+          </Button></a>
         </div>
       </div>
     </nav>

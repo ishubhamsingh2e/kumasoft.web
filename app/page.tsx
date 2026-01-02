@@ -1,22 +1,25 @@
-import TabsSection from "@/components/tabs-section";
-import { TemplateGallery } from "@/components/gallery";
-import InfoSection from "@/components/info-section";
+import { BentoGrid } from "@/components/bento-grid"
+import { CtaBanner } from "@/components/cta-banner"
+import { FaqSection } from "@/components/faq-section"
+import { TemplateGallery } from "@/components/gallery"
+import HeroSection from "@/components/hero-section"
+import InfoSection, { infoContent } from "@/components/info-section"
+import { Navigation } from "@/components/navigation"
+import { TestimonialsSection } from "@/components/review-section"
+import TabsSection from "@/components/tabs-section"
+import { Button } from "@/components/ui/button"
+import { staticContent, slides } from "@/lib/data"
 
-import HeroSection from "@/components/hero-section";
-import { BentoGrid } from "@/components/bento-grid";
-import { slides, staticContent } from "@/lib/data";
-import { TestimonialsSection } from "@/components/review-section";
-import { CtaBanner } from "@/components/cta-banner";
-import { FaqSection } from "@/components/faq-section";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <div className="bg-primary">
+   <>
+   <Navigation/>
+     <div className="bg-primary">
         <HeroSection />
       </div>
 
-      <InfoSection static={staticContent} />
+      <InfoSection static={infoContent} />
        <div className="container mx-auto">
         <BentoGrid />
       </div>
@@ -25,15 +28,13 @@ export default function Home() {
 
       <TabsSection
         lrt
-        classname="bg-[#f9e3fc]"
+        backgroundColor="bg-[#533267]"
         static={staticContent}
         slides={slides}
       />
       <TestimonialsSection />
-      <div className="flex min-h-screen flex-col items-center justify-center bg-black py-12">
+      
         <FaqSection />
-        <CtaBanner />
-      </div>
-    </>
-  );
+   </>
+  )
 }

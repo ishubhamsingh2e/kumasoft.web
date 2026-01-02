@@ -1,7 +1,9 @@
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ChevronRight } from "lucide-react";
 import { features } from "@/lib/data";
 import HeroCarousel from "./hero-carousel";
+import { ShimmerButton } from "./ui/shimmer-button";
 export default function HeroSection() {
   return (
     <>
@@ -38,19 +40,20 @@ export default function HeroSection() {
           </div>
         </div>
         <h1 className="text-primary-foreground font-grift max-w-5xl px-4 text-center text-6xl leading-24 font-bold md:px-0 md:text-7xl lg:text-8xl">
-          <span className="text-slate-400">The all-in-one</span>
+          <span className="text-primary-foreground/60">The all-in-one</span>
           <br />
-          WordPress theme <br /> to build beautiful sites
+          Digital Solution  <br /> for your business
           <span className="text-[#F05A29]">.</span>
         </h1>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="flex w-full items-center justify-center gap-2 rounded-full bg-[#F05A29] px-6 py-3 font-semibold text-white transition hover:opacity-90 sm:w-auto">
-            <span>Consultation | Free</span>
-            <ChevronRight className="h-4 w-4" />
-          </button>
+
+          <ShimmerButton background="rgb(240 90 41)" className="font-semibold flex items-end justify-center"><span>Book Free Consultation</span>
+            <ChevronRight className=" h-5 w-5" />
+          </ShimmerButton>
+
           <div className="text-center text-sm text-slate-300 sm:text-left">
-            <p>Life-time license, free updates</p>
-            <p>and 6 months of free support.</p>
+            <p>Life-time license*, free updates</p>
+            <p>and 3 months of free support.</p>
           </div>
         </div>
 

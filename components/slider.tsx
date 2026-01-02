@@ -17,7 +17,7 @@ interface WooPreviewSliderProps {
 
 export default function WooPreviewSlider({ slides }: WooPreviewSliderProps) {
   return (
-    <div className="relative w-full bg-[#90919C14] rounded-lg p-8 z-20 h-full flex flex-col justify-between gap-10  ">
+    <div className="relative w-full bg-[#90919C14] rounded-lg p-8 z-20 h-[70%] flex flex-col justify-between gap-10  ">
       <div>
         <h1 className="text-3xl font-bold">WooCommerce pages.</h1>
         <p className="text-xl font-normal ">

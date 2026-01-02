@@ -28,7 +28,7 @@ export function TemplateCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative aspect-[1.4/1] overflow-hidden rounded-2xl bg-muted transition-all duration-500 ease-in-out">
+      <div className="relative aspect-video overflow-hidden rounded-2xl bg-muted transition-all duration-500 ease-in-out">
         {/* Main Image */}
         <Image
           src={image || "/placeholder.svg"}
